@@ -85,7 +85,7 @@ assert np.array_equal(double_anti_a.co, [0,0,3/2,1/3,1/12])
 ```
 
 ## <p align="center">Integrate Along the X Axis
-$$ \implies \int_{0}^{10} a\, dx = \int a  dx (10) -  \int a dx(0) = 463.333$$
+$$ \implies \int_{0}^{10} a\, dx = \int a \, dx (10) -  \int a\, dx(0) = 463.333$$
 ``` python
 def_int_a = a.integrate_x_axis(0,10)
 assert round(def_int_a ,4)== 463.3333

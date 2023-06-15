@@ -17,6 +17,7 @@ $$ a = x^2 + 2x + 3$$
 $$ b = 2x^2 + 3x + 4$$
 
 ``` python
+from polycalc import Polynomial
 a = Polynomial([3,2,1])
 b = Polynomial([4,3,2])
 ```

@@ -20,12 +20,15 @@ $$ b = 2x^2 + 3x + 4$$
 a = Polynomial([3,2,1])
 b = Polynomial([4,3,2])
 ```
+## <p align="center">Accessing the Coefficients
+``` python
+assert a.co == [3,2,1]
+```
 ## <p align="center">Evaluating Polynomial at x
 $$\implies a(2) = 2^2 + 2*2 + 3 = 11$$
 ``` python
 assert a.evaluate(2) == 11
 ```
-
 
 ## <p align="center">Plotting the polynomial
 
@@ -81,13 +84,13 @@ assert  a.antiderive().co == [0,3,1,1/3]
 ## <p align="center">Any Order Antiderivative
 $$ \implies \int\int a \, dx\ = \frac{1}{12}x^4 + \frac{1}{3}x^3 + \frac{3}{2}x^2 + c$$
 ``` python
-assert a.antiderive().antiderive().co = [0,0,3/2,1/3,1/12]
+assert a.antiderive().antiderive().co == [0,0,3/2,1/3,1/12]
 ```
 
 ## <p align="center">Integrate Along the X Axis
 $$ \implies \int_{0}^{10} a\, dx = \int a \, dx (10) -  \int a\, dx(0) = 463.333$$
 ``` python
-assert round(a.integrate_x_axis(0,10) ,4)== 463.3333
+assert round(a.integrate_x_axis(0,10) ,4 )== 463.3333
 ```
 
 ## <p align="center">Future Development

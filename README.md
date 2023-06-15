@@ -6,7 +6,8 @@
 
 ## <p align="center">Generating first order polynomials
 
-$$ a = x^2 + 2x + 3$$ 
+$$ a = x^2 + 2x + 3$$
+
 $$ b = 2x^2 + 3x + 4$$
 
 ``` python

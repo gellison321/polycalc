@@ -70,21 +70,22 @@ assert np.array_equal(c_prime.co, a.derive().derive().co)
 ```
 
 ## Finding Antiderivative of a Polynomial
-$ \implies \int a dx = \frac{1}{3}x^3 + x^2 + 3x + c $
+$ \implies \int a \,dx = \frac{1}{3}x^3 + x^2 + 3x + c $
+
 ``` python
 anti_a = a.antiderive()
 assert np.array_equal(anti_a.co, [0,3,1,1/3])
 ```
 
 ## Any Order Antiderivative
-$ \implies \int\int a dx = \frac{1}{12}x^4 + \frac{1}{3}x^3 + \frac{3}{2}x^2 + c$
+$ \implies \int\int a \, dx\ = \frac{1}{12}x^4 + \frac{1}{3}x^3 + \frac{3}{2}x^2 + c$
 ``` python
 double_anti_a = a.antiderive().antiderive()
 assert np.array_equal(double_anti_a.co, [0,0,3/2,1/3,1/12])
 ```
 
 ## Integrate Along the X Axis
-$ \implies \int_{0}^{10} a dx = \int a  dx (10) -  \int a dx(0) = 463.333$
+$ \implies \int_{0}^{10} a\, dx = \int a  dx (10) -  \int a dx(0) = 463.333$
 ``` python
 def_int_a = a.integrate_x_axis(0,10)
 assert round(def_int_a ,4)== 463.3333

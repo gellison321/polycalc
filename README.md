@@ -24,7 +24,9 @@ assert evaluation == 11
 ## <p align="center">Plotting the polynomial
 
 ``` python
-a.plot(start = -10, stop = 10, step = 0.1)
+import matplotlib.pyplot as plt
+import numpy as np
+plt.plot([a.evaluate(x) for x in np.arange(-10, 10, 0.1)]);
 ```
 
 ## <p align="center">Adding two polynomials

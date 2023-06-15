@@ -1,10 +1,7 @@
-import matplotlib.pyplot as plt
-import numpy as np
-
 class Polynomial(object):
     
     def __init__(self, coefficients):
-        self.co = np.array(coefficients)
+        self.co = coefficients
         
     def evaluate(self, x):
         if any(isinstance(i, list) for i in self.co):
@@ -21,7 +18,6 @@ class Polynomial(object):
     def antiderive(self): 
         return Polynomial([0] + [self.co[i]/(i+1) for i in range(0, len(self.co))])
 
-    # multiplies polynomial by another polynomial
     def multiply(self, multiplier):
         ax = [0 for i in range( len(self.co) + len(multiplier.co)  - 1)]
         for i, co in enumerate(self.co):
@@ -46,7 +42,7 @@ class Polynomial(object):
             return Polynomial([self.co[i] + adder.co[i] for i in range(0,len(self.co))] + [adder.co[i] for i in range(len(self.co), len(adder.co))])
 
     def scalar_divide(self, divisor):
-        return Polynomial(self.co/divisor)
+        return Polynomial([self.co[i]/divisor for i in range(len(self.co))])
 
     def x_divide(self):
         assert self.co[0] == 0
@@ -54,6 +50,3 @@ class Polynomial(object):
     
     def integrate_x_axis(self, a, b):
         return self.antiderive().evaluate(b) - self.antiderive().evaluate(a)
-    
-    def plot(self, start = -10, stop = 10, step = 0.1, figsize = (20,10)):
-        plt.plot([self.evaluate(x) for x in np.arange(start, stop, step)]);

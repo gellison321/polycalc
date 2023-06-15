@@ -90,7 +90,7 @@ assert a.antiderive().antiderive().co == [0,0,3/2,1/3,1/12]
 ## <p align="center">Integrate Along the X Axis
 $$ \implies \int_{0}^{10} a\, dx = \int a \, dx (10) -  \int a\, dx(0) = 463.333$$
 ``` python
-assert round(a.integrate_x_axis(0,10) ,4 )== 463.3333
+assert round(a.integrate_x_axis(0,10) ,4 ) == 463.3333
 ```
 
 ## <p align="center">Future Development

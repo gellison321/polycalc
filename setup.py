@@ -9,7 +9,7 @@ setup(
   author = 'Grant Ellison',
   author_email = 'gellison321@gmail.com',
   url = 'https://github.com/gellison321/polycalc',
-  download_url = 'https://github.com/gellison321/polycalc/archive/refs/tags/0.1.tar.gz',
+  download_url = 'https://github.com/gellison321/polycalc/archive/refs/tags/0.2.tar.gz',
   keywords = ['polynomial', 'calculus', 'calculator'],
   classifiers=[
     'Development Status :: 4 - Beta',

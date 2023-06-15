@@ -2,6 +2,12 @@
 <p align="center">A small program that does basic calculus operations with first order polynomials.
 
 
+### <p align="center">[Install From pip](https://pypi.org/project/polycalc/)
+```
+$ pip install polycalc
+```
+
+
 ## <p align="center">IMPLEMENTATION
 
 ## <p align="center">Generating first order polynomials

@@ -1,2 +1,99 @@
-# polycalc
-A small program that does basic calculus operations with first order polynomials.
+# <p align="center">polycalc
+<p align="center">A small program that does basic calculus operations with first order polynomials.
+
+
+## <p align="center">IMPLEMENTATION
+
+## Generating first order polynomials
+$ a = x^2 + 2x + 3$  
+$ b = 2x^2 + 3x + 4$
+
+``` python
+a = Polynomial([3,2,1])
+b = Polynomial([4,3,2])
+```
+## Evaluating Polynomial at x
+$\implies a(2) = 2^2 + 2*2 + 3 = 11$
+``` python
+evaluation = a.evaluate(2)
+assert evaluation == 11
+```
+
+
+## Plotting the polynomial
+
+``` python
+a.plot(start = -10, stop = 10, step = 0.1)
+```
+
+## Adding two polynomials
+$\implies b+a = 3x^2 + 5x + 7$
+``` python
+c = b.add(a)
+assert np.array_equal(c.co, [7, 5, 3])
+```
+
+## Subtracting Polynomials
+$\implies b-a = x^2 + x + 1$
+``` python
+c = b.subtract(a)
+assert np.array_equal(c.co, [1,1,1])
+```
+
+## Multiplying Polynomials
+$\implies b*a = 2x^4 + 7x^3 + 16x^2 + 17x + 12$
+``` python
+c = a.multiply(b)
+assert np.array_equal(c.co, [12,17,16,7,2])
+```
+
+## Dividing Polynomial by a Scalar
+$\implies b/a = 2x^2 + 3/2x + 1$
+``` python
+c = b.scalar_divide(2)
+assert np.array_equal(c.co, [2,3/2,1])
+```
+
+## Finding Derivative of Polynomial
+$\implies a'(x) = 2x + 2 $
+``` python
+c = a.derive()
+assert np.array_equal(c.co, [2,2])
+```
+
+## Any Order Derivative
+$\implies a''(x) = 2 = c'(x)$
+``` python
+c_prime = c.derive()
+assert np.array_equal(c_prime.co, a.derive().derive().co)
+```
+
+## Finding Antiderivative of a Polynomial
+$ \int a dx = \frac{1}{3}x^3 + x^2 + 3x$
+``` python
+anti_a = a.antiderive()
+assert np.array_equal(anti_a.co, [0,3,1,1/3])
+```
+
+## Any Order Antiderivative
+$ \int\int a dx = \frac{1}{12}x^4 + \frac{1}{3}x^3 + \frac{3}{2}x^2$
+``` python
+double_anti_a = a.antiderive().antiderive()
+assert np.array_equal(double_anti_a.co, [0,0,3/2,1/3,1/12])
+```
+
+## Integrate Along the X Axis
+$\int_{0}^{10} a dx = \int a  dx (10) -  \int a dx(0) + c  = 463.333$
+``` python
+def_int_a = a.integrate_x_axis(0,10)
+assert round(def_int_a ,4)== 463.3333
+```
+
+## Future Development
+    1. Handling negative exponents
+    2. Polynomial Division
+    3. Solving for roots
+    4. Solving for polynominal intersections
+    5. Integrating between two curves
+    6. Multivariate polynomials
+    7. Taylor polynomial expansion - fit to data

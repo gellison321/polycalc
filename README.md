@@ -10,7 +10,7 @@ $ pip install polycalc
 
 ## <p align="center">IMPLEMENTATION
 
-## <p align="center">Generating first order polynomials
+## <p align="center">Generating Polynomials
 
 $$ a = x^2 + 2x + 3$$
 

@@ -1,5 +1,5 @@
 # <p align="center">polycalc
-<p align="center">A small program that does basic calculus operations with univariate polynomials.
+<p align="center">A small program that does basic calculus operations with polynomials.
 
 
 ### <p align="center">[Install From pip](https://pypi.org/project/polycalc/)
@@ -58,7 +58,7 @@ assert a.multiply(b).co == [12,17,16,7,2]
 ```
 
 ## <p align="center">Dividing Polynomial by a Scalar
-$$\implies b/a = 2x^2 + 3/2x + 1$$
+$$\implies \frac{b}{a} = 2x^2 + 3/2x + 1$$
 ``` python
 assert b.scalar_divide(2).co == [2,3/2,1]
 ```
@@ -76,7 +76,7 @@ assert a.derive().derive().co == [2]
 ```
 
 ## <p align="center">Finding Antiderivative of a Polynomial
-$$ \implies \int a \,dx = \frac{1}{3}x^3 + x^2 + 3x + c $$
+$$ \implies \int a \ dx = \frac{1}{3}x^3 + x^2 + 3x + c $$
 
 ``` python
 assert  a.antiderive().co == [0,3,1,1/3]
